@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>CTF</h1>
-This is CTF index page from template.
+This is CTF index page from template.<br>
+Name: <?php assert(is_string($name)); $escape($name) ?>
 </body>
 </html>

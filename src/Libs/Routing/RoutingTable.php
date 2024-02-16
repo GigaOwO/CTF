@@ -13,16 +13,25 @@ class RoutingTable
 
         foreach ($this->urlPatterns as $urlPattern) {
             $this->register(
-                $urlPattern[0], $urlPattern[1], $urlPattern[2],
-                empty($urlPattern[3]) ? 'index' : $urlPattern[3]);
+                pattern: $urlPattern[0],
+                methodType: $urlPattern[1],
+                class: $urlPattern[2],
+                action: $urlPattern[3] ?? 'index'
+            );
         }
     }
 
     public function register(string $pattern, string $methodType, string $class, string $action = 'index'): void
     {
+//        echo '<pre>';
+//        print_r($this->tables);
+//        echo '</pre>';
         if (empty($this->tables[$methodType])) {
             $this->tables[$methodType] = [];
         }
+//        echo '<pre>';
+//        print_r($this->tables);
+//        echo '</pre>';
         $pieces = explode('/', $pattern);
         $current_pointer = &$this->tables[$methodType];
         foreach ($pieces as $piece) {
@@ -36,6 +45,7 @@ class RoutingTable
             'action' => $action
         ];
     }
+
     public function resolve(string $pathInfo, string $methodType): ?array
     {
         if (empty($this->tables[$methodType]))
@@ -59,9 +69,32 @@ class RoutingTable
     private function _pickBranch(array $branch, string $piece, array &$params): ?array
     {
         if (empty($branch[$piece])) {
-            return null;
+            [$real_piece, $params] = $this->_pickParam(branch: $branch, piece: $piece, params: $params, value_pattern: '/^\d+$/', value_type: 'int');
+            if($real_piece === false){
+                [$real_piece, $params] = $this->_pickParam(branch: $branch, piece: $piece, params: $params, value_pattern: '/^.+$/', value_type: 'str');
+            }
+            if($real_piece === false)
+                return null;
+            $piece = $real_piece;
         }
         $result = $branch[$piece];
         return $result;
+    }
+
+    private function _pickParam(array $branch, string $piece, array $params, string $value_pattern, string $value_type): array
+    {
+        if (preg_match($value_pattern, $piece)) {
+            foreach (array_keys($branch) as $key) {
+                if (preg_match('/' . $value_type . ':(.+)/', $key, $matches)) {
+                    $params[$matches[1]] = $piece;
+                    $piece = $key;
+                    return [$piece, $params];
+                }
+            }
+        }
+//        echo '<pre>';
+//        print_r($this->tables);
+//        echo '</pre>';
+        return [false, $params];
     }
 }
