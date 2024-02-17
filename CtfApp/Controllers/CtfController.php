@@ -8,13 +8,12 @@ class CtfController extends Controller
 {
     public function index(array $params): Response
     {
-        $data = ['name' => $params['name']];
-        return $this->render('ctf/index', $data);
+        return $this->render('ctf/index');
     }
 
     public function detail(array $params): Response
     {
-        $data = ['id' => $params['id'], 'title' => 'Detail', 'status' => 'OK'];
+        $data = ['title' => 'Detail', 'status' => 'OK'];
         return $this->render('ctf/detail', $data);
     }
 }

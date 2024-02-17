@@ -12,8 +12,6 @@
 
 <ul>
     <li>
-        ID: <?php assert(is_string($id)); $escape($id) ?>
-    <li>
         Title: <?php assert(is_string($title)); $escape($title) ?>
     </li>
     <li>
