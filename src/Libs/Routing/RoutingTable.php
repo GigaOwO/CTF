@@ -6,6 +6,7 @@ class RoutingTable
     protected array $urlPatterns = [];
     private array $tables = [];
 
+
     const INT_PATTERN = '/^\d+$/';
     const STR_PATTERN = '/^[^0-9]+$/';
 
@@ -26,12 +27,12 @@ class RoutingTable
 
     public function register(string $pattern, string $methodType, string $class, string $action): void
     {
+
         if (empty($this->tables[$methodType])) {
             $this->tables[$methodType] = [];
         }
         $pieces = explode('/', $pattern);
         $current_pointer = &$this->tables[$methodType];
-
         foreach ($pieces as $piece) {
             if (empty($current_pointer[$piece])) {
                 $current_pointer[$piece] = [];
