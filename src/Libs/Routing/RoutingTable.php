@@ -63,43 +63,12 @@ class RoutingTable
         return ['class' => $result['class'], 'action' => $result['action'], 'params' => $params];
     }
 
-    private function _pickBranch(array $branch, string $piece, array &$params): ?array
+    private function _pickBranch($branch, $piece, &$params)
     {
-        $real_piece = null;
-
-        if ($real_piece = $this->_pickIntParam($branch, $piece, $params)) {
-            return $branch[$real_piece];
+        if (empty($branch[$piece])) {
+            return null;
         }
-
-        if ($real_piece = $this->_pickStrParam($branch, $piece, $params)) {
-            return $branch[$real_piece];
-        }
-
-        return null;
+        $result = $branch[$piece];
+        return $result;
     }
-
-    private function _pickIntParam(array $branch, string $piece, array &$params): string|null
-    {
-        return $this->_pickParam($branch, $piece, $params, self::INT_PATTERN, 'int');
-    }
-
-    private function _pickStrParam(array $branch, string $piece, array &$params): string|null
-    {
-        return $this->_pickParam($branch, $piece, $params, self::STR_PATTERN, 'str');
-    }
-
-    private function _pickParam(array $branch, string $piece, array &$params, string $valuePattern, string $valueType): string|null
-    {
-        if (preg_match($valuePattern, $piece)) {
-            foreach (array_keys($branch) as $key) {
-                if (preg_match('/' . $valueType . ':(.+)/', $key, $matches)) {
-                    $params[$matches[1]] = $piece;
-                    return $key;
-                }
-            }
-        }
-
-        return null;
-    }
-
 }
