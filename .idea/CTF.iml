@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Config" isTestSource="false" packagePrefix="Config\" />
       <sourceFolder url="file://$MODULE_DIR$/CtfApp" isTestSource="false" packagePrefix="CtfApp\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Libs" isTestSource="false" packagePrefix="Libs\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />

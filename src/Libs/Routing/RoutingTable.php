@@ -58,6 +58,7 @@ class RoutingTable
             if (is_null($result))
                 return null;
         }
+        var_dump($result);
         if (is_null($result) || empty($result['class']) || empty($result['action']))
             return null;
         return ['class' => $result['class'], 'action' => $result['action'], 'params' => $params];
@@ -65,9 +66,15 @@ class RoutingTable
 
     private function _pickBranch($branch, $piece, &$params)
     {
-        if (empty($branch[$piece])) {
-            return null;
-        }
+//        if (empty($branch[$piece])) {
+//            [$real_piece, $params] = $this->_pickIntParam($branch, $piece, $params);
+//            if ($real_piece === false) {
+//                [$real_piece, $params] = $this->_pickStrParam($branch, $piece, $params);
+//            }
+//        }
+        echo '<pre>';
+        var_dump($branch[$piece]);
+        echo '</pre>';
         $result = $branch[$piece];
         return $result;
     }
