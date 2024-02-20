@@ -2,8 +2,7 @@
 
 namespace Config;
 
-use Libs\Application;
-use Config\DirectorySettings;
+use public\src\Libs\Application;
 
 class ConfigApplication extends  Application
 {

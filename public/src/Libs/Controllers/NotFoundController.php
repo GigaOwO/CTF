@@ -1,8 +1,8 @@
 <?php
-namespace Libs\Controllers;
+namespace public\src\Libs\Controllers;
 
-use Libs\Https\Response;
-use Libs\Https\Status;
+use public\src\Libs\Https\Response;
+use public\src\Libs\Https\Status;
 
 class NotFoundController extends Controller
 {

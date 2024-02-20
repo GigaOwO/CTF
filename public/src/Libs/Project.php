@@ -1,13 +1,10 @@
 <?php
-namespace Libs;
+namespace public\src\Libs;
 
 use Config\ProjectSettings;
-use CtfApp\Controllers\CtfController;
-use CtfApp\RoutingTable;
-use Libs\Https\Request;
-use Libs\Https\Response;
-use Libs\Controllers\Controller;
-use Libs\Routing\Router;
+use public\src\Libs\Controllers\Controller;
+use public\src\Libs\Https\Request;
+use public\src\Libs\Routing\Router;
 
 class Project
 {

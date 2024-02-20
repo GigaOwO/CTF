@@ -1,5 +1,5 @@
 <?php
-namespace Libs\Routing;
+namespace public\src\Libs\Routing;
 
 class RoutingTable
 {
@@ -45,7 +45,6 @@ class RoutingTable
             'action' => $action
         ];
     }
-
     public function resolve(string $pathInfo, string $methodType): ?array
     {
         if (empty($this->tables[$methodType]))

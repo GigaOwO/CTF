@@ -1,5 +1,5 @@
 <?php
-namespace Libs\Views;
+namespace public\src\Libs\Views;
 
 use Config\DirectorySettings;
 

@@ -13,5 +13,5 @@ class ProjectSettings
         ['/^\/?ctf(\/|)/','CtfApp\RoutingTable']
     ];
 
-    public const NOT_FOUND_CONTROLLER = 'Libs\Controllers\NotFoundController';
+    public const NOT_FOUND_CONTROLLER = 'public\src\Libs\Controllers\NotFoundController';
 }

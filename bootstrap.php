@@ -4,8 +4,8 @@ require 'vendor/autoload.php';
 require_once 'Config/ProjectSettings.php';
 
 
-use Libs\Project;
 use Config\ProjectSettings;
+use public\src\Libs\Project;
 
 if (ProjectSettings::IS_DEBUG) {
     ini_set('display_errors', 1);

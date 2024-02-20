@@ -1,7 +1,7 @@
 <?php
-namespace Libs\Routing;
+namespace public\src\Libs\Routing;
 
-use Libs\Https\Request;
+use public\src\Libs\Https\Request;
 
 class Router
 {

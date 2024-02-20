@@ -1,5 +1,5 @@
 <?php
-namespace Libs\Https;
+namespace public\src\Libs\Https;
 
 class Request
 {

@@ -1,10 +1,10 @@
 <?php
-namespace Libs\Controllers;
+namespace public\src\Libs\Controllers;
 
 use Config\ProjectSettings;
-use Libs\Https\Request;
-use Libs\Https\Response;
-use Libs\Views\View;
+use public\src\Libs\Https\Request;
+use public\src\Libs\Https\Response;
+use public\src\Libs\Views\View;
 
 class Controller
 {
