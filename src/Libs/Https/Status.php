@@ -1,5 +1,5 @@
 <?php
-namespace public\src\Libs\Https;
+namespace Libs\Https;
 
 
 class Status

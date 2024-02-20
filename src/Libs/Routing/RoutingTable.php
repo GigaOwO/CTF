@@ -1,5 +1,5 @@
 <?php
-namespace public\src\Libs\Routing;
+namespace Libs\Routing;
 
 class RoutingTable
 {

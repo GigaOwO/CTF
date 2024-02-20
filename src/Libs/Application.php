@@ -1,6 +1,6 @@
 <?php
 
-namespace public\src\Libs;
+namespace Libs;
 
 class Application
 {

@@ -1,8 +1,8 @@
 <?php
 namespace CtfApp\Controllers;
 
-use public\src\Libs\Controllers\Controller;
-use public\src\Libs\Https\Response;
+use Libs\Controllers\Controller;
+use Libs\Https\Response;
 
 class CtfController extends Controller
 {

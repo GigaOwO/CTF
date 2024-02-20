@@ -2,7 +2,7 @@
 
 namespace CtfApp;
 
-use public\src\Libs\Application;
+use Libs\Application;
 
 class CtfApplication extends Application
 {

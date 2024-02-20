@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Tasks Detail Page from Template.</h2>
+<h2>CTF Detail Page from Template.</h2>
 
 <ul>
     <li>

@@ -1,10 +1,10 @@
 <?php
-namespace public\src\Libs;
+namespace Libs;
 
 use Config\ProjectSettings;
-use public\src\Libs\Controllers\Controller;
-use public\src\Libs\Https\Request;
-use public\src\Libs\Routing\Router;
+use Libs\Controllers\Controller;
+use Libs\Https\Request;
+use Libs\Routing\Router;
 
 class Project
 {

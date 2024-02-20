@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use public\src\Libs\Application;
+use Libs\Application;
 
 class ConfigApplication extends  Application
 {

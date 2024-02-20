@@ -3,7 +3,7 @@ namespace CtfApp;
 
 use CtfApp\Controllers\CtfController;
 
-class RoutingTable extends \public\src\Libs\Routing\RoutingTable
+class RoutingTable extends \Libs\Routing\RoutingTable
 {
     protected array $urlPatterns = [
         ['', 'GET', CtfController::class, 'index'],
